@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Preview - POPULAR Study Pass</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #c8102e;
+    --red-dark: #9e0c24;
+    --bg: #f7f8fb;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #5f6b7a;
+    --muted-strong: #445366;
+    --line: rgba(15, 23, 42, .12);
+    --green: #16a34a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Montserrat', sans-serif; background: var(--bg); color: var(--text); }
+
+  .top {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(255, 255, 255, .95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; }
+  .logo-pill { background: var(--red); color: #fff; font-weight: 900; font-size: 16px; padding: 4px 10px; border-radius: 3px; letter-spacing: -.4px; }
+  .logo-tag { font-size: 9px; font-weight: 700; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; }
+  .back-btn {
+    border: 1px solid var(--line);
+    background: #fff;
+    color: var(--text);
+    border-radius: 6px;
+    padding: 9px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    cursor: pointer;
+  }
+
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 24px 40px; }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 30px;
+    align-items: start;
+    margin-bottom: 24px;
+  }
+  .cover {
+    width: 100%;
+    aspect-ratio: 3 / 4.3;
+    border-radius: 10px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, .25);
+    border: 1px solid var(--line);
+    background: linear-gradient(135deg, #1d4ed8, #0f172a);
+    background-size: cover;
+    background-position: center;
+  }
+  .meta { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 24px; }
+  .tag { font-size: 10px; font-weight: 800; color: var(--red); letter-spacing: 1.8px; text-transform: uppercase; margin-bottom: 8px; }
+  .title { font-size: clamp(1.4rem, 2.6vw, 2rem); font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+  .sub { color: var(--muted); font-size: 13px; font-weight: 600; margin-bottom: 14px; }
+  .desc { color: var(--muted); font-size: 14px; line-height: 1.7; margin-bottom: 18px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+  .chip { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; border-radius: 999px; padding: 6px 10px; border: 1px solid var(--line); background: #fff; }
+  .chip.good { border-color: rgba(22,163,74,.3); color: var(--green); background: rgba(22,163,74,.08); }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn { border: none; border-radius: 6px; padding: 11px 16px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; }
+  .btn.red { background: var(--red); color: #fff; }
+  .btn.ghost { background: #fff; border: 1px solid var(--line); color: var(--text); }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: 16px;
+  }
+  .panel {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px;
+  }
+  .panel h3 { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+
+  .toc { list-style: none; display: grid; gap: 8px; }
+  .toc li {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 12px;
+    color: var(--muted-strong);
+    background: #fff;
+  }
+
+  .preview {
+    background: #fff;
+    border: 1px dashed rgba(15, 23, 42, .28);
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 10px;
+  }
+  .q { font-weight: 700; font-size: 12px; margin-bottom: 8px; }
+  .a { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+  .info-list { list-style: none; display: grid; gap: 10px; }
+  .info-list li {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 12px;
+    color: var(--muted);
+    background: #fff;
+  }
+  .info-list b { color: var(--text); }
+
+  .empty {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    color: var(--muted);
+  }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .cover { max-width: 270px; }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="logo-pill">Popular</span>
+      <span class="logo-tag">Study Pass</span>
+    </div>
+    <button class="back-btn" onclick="goBack()">Back to Library</button>
+  </header>
+
+  <main class="wrap" id="app"></main>
+
+<script>
+  function goBack() {
+    window.location.href = 'index.html';
+  }
+
+  function getBookFromSession() {
+    const id = new URLSearchParams(window.location.search).get('id');
+    const raw = sessionStorage.getItem('selectedBook');
+    if (!raw) return null;
+    try {
+      const parsed = JSON.parse(raw);
+      if (!id || parsed.id === id) return parsed;
+    } catch (e) {
+      return null;
+    }
+    return null;
+  }
+
+  function buildPreviewHtml(book) {
+    const lines = [
+      'Unit 1: Diagnostic Practice and Grammar Warm-up',
+      'Unit 2: Cloze Passage Strategy and Vocabulary Control',
+      'Unit 3: Comprehension Open-ended Question Techniques',
+      'Unit 4: Exam-format Timed Practice',
+      'Unit 5: Final Revision Checklist and Error Log'
+    ];
+
+    return `
+      <section class="hero">
+        <div class="cover" style="background:${book.bg}"></div>
+        <div class="meta">
+          <div class="tag">${book.tag}</div>
+          <h1 class="title">${book.title}</h1>
+          <div class="sub">${book.sub}</div>
+          <p class="desc">${book.desc}</p>
+          <div class="chips">
+            <span class="chip good">Included in subscription</span>
+            <span class="chip">Assessment PDF</span>
+            <span class="chip">Answers PDF</span>
+            <span class="chip">Instant access</span>
+          </div>
+          <div class="actions">
+            <button class="btn red" onclick="fakeDownload('Assessment PDF')">Download Assessment</button>
+            <button class="btn ghost" onclick="fakeDownload('Answers PDF')">Download Answers</button>
+            <button class="btn ghost" onclick="goBack()">Browse More Books</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="panel">
+          <h3>Preview of Contents</h3>
+          <ul class="toc">
+            ${lines.map(item => `<li>${item}</li>`).join('')}
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Book Details</h3>
+          <ul class="info-list">
+            <li><b>Format:</b> Digital workbook with printable pages</li>
+            <li><b>Best for:</b> Weekly revision and exam-focused practice</li>
+            <li><b>Access:</b> Unlimited while subscription is active</li>
+            <li><b>Files:</b> Paper and answers are provided separately</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="panel" style="margin-top:16px;">
+        <h3>Sample Questions</h3>
+        <div class="preview">
+          <div class="q">Q1. Rewrite the sentence using the word given, without changing its meaning.</div>
+          <div class="a">Given word: although. Keep your answer grammatically correct and complete.</div>
+        </div>
+        <div class="preview">
+          <div class="q">Q2. Read the short passage and answer in complete sentences.</div>
+          <div class="a">Your answer should include one supporting detail from the passage and one inference.</div>
+        </div>
+      </section>
+    `;
+  }
+
+  function render() {
+    const app = document.getElementById('app');
+    const book = getBookFromSession();
+
+    if (!book) {
+      app.innerHTML = `
+        <div class="empty">
+          <h2 style="margin-bottom:10px;color:#1f2937;">Book preview unavailable</h2>
+          <p style="margin-bottom:14px;">Open a book from the library page to view its preview details.</p>
+          <button class="btn red" onclick="goBack()">Go to Library</button>
+        </div>
+      `;
+      return;
+    }
+
+    document.title = `${book.title} - Preview`;
+    app.innerHTML = buildPreviewHtml(book);
+  }
+
+  function fakeDownload(label) {
+    alert(`${label} for this title is ready in your subscription dashboard.`);
+  }
+
+  render();
+</script>
+</body>
+</html>

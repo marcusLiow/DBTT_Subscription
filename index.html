@@ -10,13 +10,14 @@
     --red: #c8102e;
     --red-dark: #9e0c24;
     --red-bright: #e8192e;
-    --bg: #0d0d0d;
-    --bg2: #141414;
-    --card: #1c1c1c;
-    --card-h: #242424;
-    --text: #e8e8e8;
-    --muted: #909090;
-    --dim: #555;
+    --bg: #f7f8fb;
+    --bg2: #ffffff;
+    --card: #ffffff;
+    --card-h: #f1f4f9;
+    --text: #1f2937;
+    --muted: #5f6b7a;
+    --dim: #8a94a3;
+    --line: rgba(15, 23, 42, .12);
     --gold: #f0b429;
     --green: #22c55e;
     --nav-h: 64px;
@@ -28,27 +29,27 @@
   html { scroll-behavior: smooth; }
   body { font-family: 'Montserrat', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
   ::-webkit-scrollbar { width: 5px; }
-  ::-webkit-scrollbar-track { background: #0d0d0d; }
+  ::-webkit-scrollbar-track { background: #e7ebf2; }
   ::-webkit-scrollbar-thumb { background: var(--red); border-radius: 3px; }
 
   /* NAVBAR */
   .nav {
     position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); z-index: 900;
     display: flex; align-items: center; justify-content: space-between; padding: 0 48px;
-    background: linear-gradient(to bottom, rgba(13,13,13,.97) 0%, rgba(13,13,13,0) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,.97) 0%, rgba(255,255,255,0) 100%);
     transition: background .35s;
   }
-  .nav.solid { background: rgba(13,13,13,.97); box-shadow: 0 1px 0 rgba(255,255,255,.05); }
+  .nav.solid { background: rgba(255,255,255,.97); box-shadow: 0 8px 26px rgba(15,23,42,.08); }
   .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
   .logo-pill { background: var(--red); color: #fff; font-weight: 900; font-size: 18px; padding: 4px 11px; border-radius: 3px; letter-spacing: -.5px; }
   .logo-tag { font-size: 9px; font-weight: 700; color: var(--muted); letter-spacing: 2.5px; text-transform: uppercase; }
   .nav-links { display: flex; gap: 26px; list-style: none; }
   .nav-links a { text-decoration: none; color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; transition: color .2s; }
-  .nav-links a:hover { color: #fff; }
+  .nav-links a:hover { color: var(--text); }
   .nav-links a.on { color: var(--red); }
   .nav-right { display: flex; align-items: center; gap: 14px; }
-  .nav-search { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-radius: 20px; padding: 6px 14px; color: #fff; font-size: 12px; font-family: inherit; outline: none; width: 150px; transition: all .3s; }
-  .nav-search:focus { background: rgba(255,255,255,.11); border-color: var(--red); width: 190px; }
+  .nav-search { background: #f1f4f9; border: 1px solid var(--line); border-radius: 20px; padding: 6px 14px; color: var(--text); font-size: 12px; font-family: inherit; outline: none; width: 150px; transition: all .3s; }
+  .nav-search:focus { background: #fff; border-color: var(--red); width: 190px; }
   .sub-cta { background: linear-gradient(90deg, var(--red-dark), var(--red)); color: #fff; font-size: 10px; font-weight: 800; padding: 7px 16px; border-radius: 4px; letter-spacing: .8px; text-transform: uppercase; cursor: pointer; transition: opacity .2s; white-space: nowrap; border: none; font-family: inherit; }
   .sub-cta:hover { opacity: .85; }
   .sub-active { display: none; align-items: center; gap: 8px; background: rgba(34,197,94,.12); border: 1px solid rgba(34,197,94,.3); border-radius: 20px; padding: 5px 14px 5px 10px; font-size: 11px; font-weight: 700; color: var(--green); cursor: pointer; }
@@ -64,11 +65,11 @@
 
   /* HERO */
   .hero { position: relative; min-height: 88vh; display: flex; align-items: flex-end; padding-bottom: 80px; overflow: hidden; }
-  .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 55% 65% at 62% 38%, rgba(200,16,46,.2) 0%, transparent 60%), radial-gradient(ellipse 35% 45% at 25% 65%, rgba(200,16,46,.07) 0%, transparent 55%), linear-gradient(140deg, #0d0d0d 0%, #1c0608 45%, #0d0d0d 100%); }
-  .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(200,16,46,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(200,16,46,.035) 1px, transparent 1px); background-size: 55px 55px; animation: gdrift 22s linear infinite; }
+  .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 55% 65% at 62% 38%, rgba(200,16,46,.12) 0%, transparent 60%), radial-gradient(ellipse 35% 45% at 25% 65%, rgba(200,16,46,.05) 0%, transparent 55%), linear-gradient(140deg, #ffffff 0%, #fff3f5 45%, #f6f8fc 100%); }
+  .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(200,16,46,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(200,16,46,.06) 1px, transparent 1px); background-size: 55px 55px; animation: gdrift 22s linear infinite; }
   @keyframes gdrift { from{transform:translate(0,0)} to{transform:translate(55px,55px)} }
   .hero-books { position: absolute; right: 0; top: 0; bottom: 0; width: 52%; display: flex; align-items: center; justify-content: center; padding-right: 60px; gap: 22px; }
-  .fbook { border-radius: 5px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 14px 10px; text-align: center; box-shadow: -8px 10px 40px rgba(0,0,0,.75), 0 0 0 1px rgba(255,255,255,.06); animation: fb 6s ease-in-out infinite; }
+  .fbook { border-radius: 5px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 14px 10px; text-align: center; box-shadow: -8px 10px 30px rgba(15,23,42,.22), 0 0 0 1px rgba(15,23,42,.06); animation: fb 6s ease-in-out infinite; }
   .fbook:nth-child(1) { width:125px; height:178px; --ty:8px; --ro:-3deg; animation-delay:0s; }
   .fbook:nth-child(2) { width:146px; height:208px; --ty:-5px; --ro:0deg; animation-delay:1.2s; z-index:2; }
   .fbook:nth-child(3) { width:125px; height:178px; --ty:12px; --ro:3deg; animation-delay:2.2s; }
@@ -77,7 +78,7 @@
   .fb-title { font-size:13px; font-weight:900; line-height:1.2; margin-bottom:5px; }
   .fb-sub { font-size:8px; font-weight:600; letter-spacing:1px; text-transform:uppercase; opacity:.6; }
   .fb-access { margin-top:8px; font-size:7px; font-weight:700; letter-spacing:1px; background:rgba(34,197,94,.2); color:var(--green); border:1px solid rgba(34,197,94,.35); border-radius:10px; padding:2px 8px; text-transform:uppercase; }
-  .hero-fade-b { position:absolute; bottom:0; left:0; right:0; height:320px; background:linear-gradient(to top, var(--bg) 0%, rgba(13,13,13,.6) 55%, transparent 100%); }
+  .hero-fade-b { position:absolute; bottom:0; left:0; right:0; height:320px; background:linear-gradient(to top, var(--bg) 0%, rgba(247,248,251,.55) 55%, transparent 100%); }
   .hero-fade-r { position:absolute; top:0; right:42%; bottom:0; width:200px; background:linear-gradient(to right, var(--bg) 0%, transparent 100%); }
   .hero-content { position:relative; z-index:10; padding-left:60px; max-width:570px; animation: hup .9s cubic-bezier(.22,1,.36,1) both; }
   @keyframes hup { from{opacity:0;transform:translateY(38px)} to{opacity:1;transform:translateY(0)} }
@@ -88,7 +89,7 @@
   .hero-sub { font-size:13px; font-weight:700; color:var(--gold); letter-spacing:1px; text-transform:uppercase; margin-bottom:16px; animation: hup .9s cubic-bezier(.22,1,.36,1) .3s both; }
   .hero-desc { font-size:14px; line-height:1.75; color:var(--muted); margin-bottom:26px; max-width:430px; animation: hup .9s cubic-bezier(.22,1,.36,1) .4s both; }
   .hero-pricing { display:flex; gap:12px; margin-bottom:28px; flex-wrap:wrap; animation: hup .9s cubic-bezier(.22,1,.36,1) .45s both; }
-  .price-pill { background:var(--card); border:1px solid rgba(255,255,255,.09); border-radius:8px; padding:10px 16px; text-align:center; min-width:108px; cursor:pointer; transition:all .25s; }
+  .price-pill { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:10px 16px; text-align:center; min-width:108px; cursor:pointer; transition:all .25s; }
   .price-pill:hover, .price-pill.best { border-color:var(--red); background:rgba(200,16,46,.1); }
   .price-pill.best { position:relative; }
   .price-pill.best::before { content:'BEST VALUE'; position:absolute; top:-10px; left:50%; transform:translateX(-50%); background:var(--gold); color:#000; font-size:8px; font-weight:800; letter-spacing:1px; padding:2px 8px; border-radius:2px; white-space:nowrap; }
@@ -97,14 +98,14 @@
   .hero-cta { display:flex; gap:13px; animation: hup .9s cubic-bezier(.22,1,.36,1) .55s both; }
   .btn-red { background:var(--red); color:#fff; border:none; padding:13px 28px; font-size:13px; font-weight:700; font-family:inherit; border-radius:4px; cursor:pointer; display:flex; align-items:center; gap:8px; text-transform:uppercase; letter-spacing:1px; transition:all .2s; box-shadow:0 4px 22px rgba(200,16,46,.4); }
   .btn-red:hover { background:var(--red-bright); transform:translateY(-1px); box-shadow:0 6px 28px rgba(200,16,46,.5); }
-  .btn-ghost { background:rgba(255,255,255,.1); color:#fff; border:1px solid rgba(255,255,255,.18); padding:13px 24px; font-size:13px; font-weight:600; font-family:inherit; border-radius:4px; cursor:pointer; display:flex; align-items:center; gap:8px; text-transform:uppercase; letter-spacing:1px; transition:all .2s; }
-  .btn-ghost:hover { background:rgba(255,255,255,.17); }
+  .btn-ghost { background:#fff; color:var(--text); border:1px solid var(--line); padding:13px 24px; font-size:13px; font-weight:600; font-family:inherit; border-radius:4px; cursor:pointer; display:flex; align-items:center; gap:8px; text-transform:uppercase; letter-spacing:1px; transition:all .2s; }
+  .btn-ghost:hover { background:#f6f8fc; }
 
   /* GENRE TABS */
-  .tabs { position:sticky; top:var(--nav-h); z-index:800; background:rgba(13,13,13,.96); backdrop-filter:blur(12px); border-bottom:1px solid rgba(255,255,255,.055); padding:0 48px; display:flex; overflow-x:auto; scrollbar-width:none; }
+  .tabs { position:sticky; top:var(--nav-h); z-index:800; background:rgba(255,255,255,.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--line); padding:0 48px; display:flex; overflow-x:auto; scrollbar-width:none; }
   .tabs::-webkit-scrollbar { display:none; }
   .tab { flex-shrink:0; padding:15px 19px; font-size:11px; font-weight:700; color:var(--muted); cursor:pointer; border-bottom:2px solid transparent; transition:all .2s; text-transform:uppercase; letter-spacing:1px; white-space:nowrap; }
-  .tab:hover { color:#fff; }
+  .tab:hover { color:var(--text); }
   .tab.on { color:var(--red); border-bottom-color:var(--red); }
 
   main { padding-top:30px; }
@@ -125,9 +126,9 @@
 
   /* CAROUSEL */
   .cw { position:relative; }
-  .ct { display:flex; gap:11px; padding:8px 48px 24px; overflow-x:auto; scroll-behavior:smooth; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
+  .ct { display:flex; gap:11px; padding:8px 48px 24px; overflow-x:auto; overflow-y:hidden; scroll-behavior:smooth; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
   .ct::-webkit-scrollbar { display:none; }
-  .arr { position:absolute; top:50%; transform:translateY(-50%); width:38px; height:78px; background:rgba(13,13,13,.85); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:20; color:#fff; font-size:22px; transition:all .2s; }
+  .arr { position:absolute; top:50%; transform:translateY(-50%); width:38px; height:78px; background:rgba(255,255,255,.94); border:1px solid var(--line); cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:20; color:var(--text); font-size:22px; transition:all .2s; }
   .arr:hover { background:rgba(200,16,46,.85); }
   .arr.L { left:0; border-radius:0 4px 4px 0; }
   .arr.R { right:0; border-radius:4px 0 0 4px; }
@@ -138,6 +139,34 @@
   .bcover { width:100%; height:var(--ch); border-radius:var(--r); overflow:hidden; position:relative; box-shadow:0 4px 22px rgba(0,0,0,.6); transition:box-shadow .35s; }
   .bc:hover .bcover { box-shadow:0 14px 44px rgba(0,0,0,.8), 0 0 0 2px var(--red); }
   .bca { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:space-between; padding:13px 10px; position:relative; overflow:hidden; }
+  .bca.book-photo { background-size:cover !important; background-position:center !important; padding:0; }
+  .book-title-under { margin-top:10px; font-size:20px; font-weight:800; color:var(--text); line-height:1.15; text-align:center; min-height:70px; letter-spacing:-.3px; }
+  .flat-cards .ct { gap:24px; align-items:flex-start; }
+  .flat-cards .bc { width:196px; padding-right:22px; border-right:1px solid #d7dce5; }
+  .flat-cards .ct .bc:last-child { border-right:none; padding-right:0; }
+  .flat-cards .book-title-under {
+    margin-top:12px;
+    font-size:15px;
+    line-height:1.35;
+    font-weight:800;
+    text-align:left;
+    min-height:0;
+    white-space:normal;
+    overflow:visible;
+    text-overflow:clip;
+    display:block;
+    letter-spacing:0;
+  }
+  .flat-cards .binfo,
+  .flat-cards .bc:hover .binfo { display:none !important; opacity:0 !important; pointer-events:none !important; }
+  .flat-cards .bc,
+  .flat-cards .bc:hover { transform:none !important; z-index:auto !important; }
+  .flat-cards .bc:hover .bcover { box-shadow:0 4px 22px rgba(0,0,0,.6) !important; }
+  .sample-primary .binfo,
+  .sample-primary .bc:hover .binfo { display:none !important; opacity:0 !important; pointer-events:none !important; }
+  .sample-primary .bc,
+  .sample-primary .bc:hover { transform:none !important; z-index:auto !important; }
+  .sample-primary .bc:hover .bcover { box-shadow:0 4px 22px rgba(0,0,0,.6) !important; }
   .spine { position:absolute; left:0; top:0; bottom:0; width:6px; background:rgba(0,0,0,.25); }
   .deco { position:absolute; border-radius:50%; opacity:.12; }
   .ctop { align-self:flex-end; background:rgba(0,0,0,.45); backdrop-filter:blur(4px); color:var(--gold); font-size:8px; font-weight:700; padding:3px 7px; border-radius:2px; letter-spacing:1px; text-transform:uppercase; border:1px solid rgba(240,180,41,.3); }
@@ -147,11 +176,11 @@
   .csubj { font-size:9px; font-weight:600; opacity:.7; letter-spacing:1px; text-transform:uppercase; }
   .clevel { font-size:8px; font-weight:700; opacity:.6; letter-spacing:1.5px; text-transform:uppercase; margin-top:3px; }
   .cbot { background:rgba(0,0,0,.38); backdrop-filter:blur(4px); border-radius:3px; padding:4px 8px; font-size:9px; font-weight:700; text-align:center; letter-spacing:.5px; border:1px solid rgba(255,255,255,.14); align-self:flex-start; margin-top:auto; }
-  .rnum { position:absolute; bottom:-8px; left:-8px; font-size:72px; font-weight:900; color:transparent; -webkit-text-stroke:2px rgba(255,255,255,.1); line-height:1; z-index:-1; pointer-events:none; transition:-webkit-text-stroke .3s; }
+  .rnum { position:absolute; bottom:-8px; left:-8px; font-size:72px; font-weight:900; color:transparent; -webkit-text-stroke:2px rgba(15,23,42,.15); line-height:1; z-index:-1; pointer-events:none; transition:-webkit-text-stroke .3s; }
   .bc:hover .rnum { -webkit-text-stroke-color:rgba(200,16,46,.28); }
 
   /* HOVER PANEL */
-  .binfo { position:absolute; bottom:-116px; left:50%; transform:translateX(-50%); width:calc(100% + 40px); background:var(--card); border-radius:0 0 8px 8px; padding:11px 12px; box-shadow:0 14px 44px rgba(0,0,0,.8); opacity:0; transition:opacity .22s; z-index:5; border:1px solid rgba(255,255,255,.06); border-top:none; pointer-events:none; }
+  .binfo { position:absolute; bottom:-116px; left:50%; transform:translateX(-50%); width:calc(100% + 40px); background:var(--card); border-radius:0 0 8px 8px; padding:11px 12px; box-shadow:0 14px 44px rgba(15,23,42,.25); opacity:0; transition:opacity .22s; z-index:5; border:1px solid var(--line); border-top:none; pointer-events:none; }
   .bc:hover .binfo { opacity:1; pointer-events:all; }
   .bi-title { font-size:10px; font-weight:700; margin-bottom:8px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 
@@ -171,9 +200,9 @@
   .plans-hd h2 span { color:var(--red); }
   .plans-hd p { font-size:13px; color:var(--muted); max-width:480px; margin:0 auto; line-height:1.7; }
   .plans-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:18px; max-width:900px; margin:0 auto; }
-  .plan { background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:10px; padding:28px 26px; position:relative; transition:all .28s; cursor:pointer; }
+  .plan { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:28px 26px; position:relative; transition:all .28s; cursor:pointer; }
   .plan:hover { border-color:rgba(200,16,46,.5); transform:translateY(-4px); box-shadow:0 16px 50px rgba(0,0,0,.5); }
-  .plan.feat { border-color:var(--red); background:linear-gradient(145deg, #1c0608, var(--card)); box-shadow:0 0 0 1px var(--red), 0 16px 50px rgba(200,16,46,.2); }
+  .plan.feat { border-color:var(--red); background:linear-gradient(145deg, #ffffff, #fff3f5); box-shadow:0 0 0 1px rgba(200,16,46,.45), 0 12px 34px rgba(200,16,46,.12); }
   .plan-chip { position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:var(--red); color:#fff; font-size:9px; font-weight:800; letter-spacing:1.5px; padding:4px 14px; border-radius:3px; text-transform:uppercase; white-space:nowrap; }
   .plan-name { font-size:12px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:2px; margin-bottom:14px; }
   .plan-price { display:flex; align-items:baseline; gap:4px; margin-bottom:6px; }
@@ -188,14 +217,14 @@
   .plan-btn { width:100%; padding:12px; border:none; border-radius:5px; font-size:12px; font-weight:700; font-family:inherit; cursor:pointer; text-transform:uppercase; letter-spacing:1px; transition:all .2s; }
   .pbr { background:var(--red); color:#fff; }
   .pbr:hover { background:var(--red-bright); }
-  .pbo { background:transparent; color:var(--text); border:1px solid rgba(255,255,255,.2); }
-  .pbo:hover { background:rgba(255,255,255,.07); }
+  .pbo { background:transparent; color:var(--text); border:1px solid var(--line); }
+  .pbo:hover { background:#f4f7fb; }
 
   /* HOW IT WORKS */
   .how-sec { padding:20px 48px 60px; opacity:0; transform:translateY(28px); transition:opacity .55s ease, transform .55s ease; }
   .how-sec.vis { opacity:1; transform:translateY(0); }
   .how-steps { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:16px; margin-top:20px; }
-  .how-step { background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:8px; padding:22px 18px; }
+  .how-step { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:22px 18px; }
   .step-n { width:34px; height:34px; background:var(--red); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:900; color:#fff; margin-bottom:13px; }
   .step-t { font-size:12px; font-weight:800; margin-bottom:6px; }
   .step-d { font-size:11px; color:var(--muted); line-height:1.65; }
@@ -203,6 +232,7 @@
   /* STATS */
   .stats { background:linear-gradient(90deg, var(--red-dark), var(--red), var(--red-dark)); padding:20px 48px; display:flex; justify-content:space-around; flex-wrap:wrap; gap:20px; opacity:0; transform:translateY(20px); transition:opacity .55s, transform .55s; }
   .stats.vis { opacity:1; transform:translateY(0); }
+  .stats + .row { margin-top: 52px; }
   .si { text-align:center; }
   .sn { font-size:26px; font-weight:900; color:#fff; line-height:1; }
   .sl { font-size:9px; font-weight:700; color:rgba(255,255,255,.65); text-transform:uppercase; letter-spacing:1.5px; margin-top:4px; }
@@ -211,32 +241,32 @@
   .subj-sec { padding:0 48px 50px; opacity:0; transform:translateY(28px); transition:opacity .55s, transform .55s; }
   .subj-sec.vis { opacity:1; transform:translateY(0); }
   .subj-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(148px, 1fr)); gap:10px; margin-top:20px; }
-  .schip { background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:6px; padding:15px 13px; cursor:pointer; display:flex; align-items:center; gap:10px; transition:all .22s; }
+  .schip { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:15px 13px; cursor:pointer; display:flex; align-items:center; gap:10px; transition:all .22s; }
   .schip:hover { background:var(--card-h); border-color:var(--red); transform:translateY(-2px); }
   .sicon { width:34px; height:34px; border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0; }
   .sname { font-size:11px; font-weight:700; margin-bottom:2px; }
   .scount { font-size:9px; color:var(--muted); }
 
   /* FOOTER */
-  footer { background:#090909; border-top:1px solid rgba(255,255,255,.05); padding:50px 48px 28px; }
+  footer { background:#edf2f8; border-top:1px solid var(--line); padding:50px 48px 28px; }
   .ftop { display:flex; gap:50px; margin-bottom:40px; flex-wrap:wrap; }
   .fbrand { flex:1; min-width:220px; }
   .flogo { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
   .fdesc { font-size:12px; color:var(--muted); line-height:1.7; max-width:270px; }
   .fcol h4 { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:var(--muted); margin-bottom:14px; }
   .fcol a { display:block; font-size:12px; color:var(--dim); text-decoration:none; margin-bottom:9px; transition:color .2s; }
-  .fcol a:hover { color:#fff; }
-  .fbot { border-top:1px solid rgba(255,255,255,.05); padding-top:18px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
+  .fcol a:hover { color:var(--text); }
+  .fbot { border-top:1px solid var(--line); padding-top:18px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
   .fbot span { font-size:11px; color:var(--dim); }
   .fbot em { color:var(--red); font-style:normal; }
 
   /* MODAL */
   .overlay { position:fixed; inset:0; background:rgba(0,0,0,.87); z-index:2000; display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity .28s; backdrop-filter:blur(10px); }
   .overlay.open { opacity:1; pointer-events:all; }
-  .modal { background:#1c1c1c; border-radius:12px; max-width:540px; width:92%; border:1px solid rgba(255,255,255,.09); overflow:hidden; box-shadow:0 40px 100px rgba(0,0,0,.9); transform:scale(.88) translateY(22px); transition:transform .35s cubic-bezier(.34,1.56,.64,1); }
+  .modal { background:#fff; border-radius:12px; max-width:540px; width:92%; border:1px solid var(--line); overflow:hidden; box-shadow:0 40px 100px rgba(15,23,42,.3); transform:scale(.88) translateY(22px); transition:transform .35s cubic-bezier(.34,1.56,.64,1); }
   .overlay.open .modal { transform:scale(1) translateY(0); }
   .mcov { height:195px; display:flex; align-items:center; justify-content:center; gap:22px; padding:22px; position:relative; }
-  .mcov::after { content:''; position:absolute; bottom:0; left:0; right:0; height:90px; background:linear-gradient(to top, #1c1c1c, transparent); }
+  .mcov::after { content:''; position:absolute; bottom:0; left:0; right:0; height:90px; background:linear-gradient(to top, #fff, transparent); }
   .mbook { width:92px; height:132px; border-radius:4px; box-shadow:-6px 6px 30px rgba(0,0,0,.7); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:12px; text-align:center; }
   .mbody { padding:0 24px 26px; }
   .mtag2 { font-size:9px; font-weight:700; color:var(--red); letter-spacing:2px; text-transform:uppercase; margin-bottom:5px; }
@@ -253,14 +283,14 @@
   .mdl-a:hover { background:var(--red-bright); transform:translateY(-1px); }
   .mdl-ans { background:rgba(240,180,41,.12); color:var(--gold); border:1px solid rgba(240,180,41,.3) !important; }
   .mdl-ans:hover { background:rgba(240,180,41,.22); transform:translateY(-1px); }
-  .mclose { position:absolute; top:12px; right:12px; background:rgba(0,0,0,.55); border:none; color:#fff; width:30px; height:30px; border-radius:50%; cursor:pointer; font-size:16px; display:flex; align-items:center; justify-content:center; z-index:10; transition:background .2s; }
+  .mclose { position:absolute; top:12px; right:12px; background:rgba(255,255,255,.8); border:1px solid var(--line); color:var(--text); width:30px; height:30px; border-radius:50%; cursor:pointer; font-size:16px; display:flex; align-items:center; justify-content:center; z-index:10; transition:background .2s; }
   .mclose:hover { background:var(--red); }
   .mnote { font-size:11px; color:var(--dim); text-align:center; }
   .mnote span { color:var(--muted); cursor:pointer; text-decoration:underline; }
-  .mnote span:hover { color:#fff; }
+  .mnote span:hover { color:var(--text); }
 
   /* TOAST */
-  .toast { position:fixed; bottom:22px; right:22px; background:#1e1e1e; border:1px solid rgba(255,255,255,.09); border-left:3px solid var(--green); padding:13px 20px; border-radius:6px; font-size:13px; font-weight:600; z-index:3000; box-shadow:0 8px 30px rgba(0,0,0,.6); transform:translateX(130%); transition:transform .4s cubic-bezier(.34,1.56,.64,1); display:flex; align-items:center; gap:10px; max-width:310px; }
+  .toast { position:fixed; bottom:22px; right:22px; background:#fff; border:1px solid var(--line); border-left:3px solid var(--green); padding:13px 20px; border-radius:6px; font-size:13px; font-weight:600; z-index:3000; box-shadow:0 8px 30px rgba(15,23,42,.22); transform:translateX(130%); transition:transform .4s cubic-bezier(.34,1.56,.64,1); display:flex; align-items:center; gap:10px; max-width:310px; }
   .toast.show { transform:translateX(0); }
   .t-icon { font-size:16px; flex-shrink:0; }
 
@@ -276,6 +306,9 @@
     footer { padding:36px 16px 20px; }
     .mdl-btns { grid-template-columns:1fr; }
     .plans-grid { grid-template-columns:1fr; }
+    .flat-cards .ct { gap:14px; }
+    .flat-cards .bc { width:150px; padding-right:14px; }
+    .flat-cards .book-title-under { font-size:12px; line-height:1.4; }
   }
 </style>
 </head>
@@ -393,46 +426,22 @@
 <main>
 
 <!-- ROW 1: TEN YEAR SERIES -->
-<section class="row" data-obs>
+<section class="row flat-cards" data-obs>
   <div class="rh">
-    <div class="rt"><span class="rt-bar"></span>Ten Year Series 2026 <span class="rbadge rb-hot">🔥 Hot</span></div>
+    <div class="rt"><span class="rt-bar"></span>Primary English Grammar &amp; Revision</div>
     <div class="see-all">See All <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></div>
   </div>
   <div class="cw">
     <button class="arr L" onclick="cscroll(this,-1)">&#8249;</button>
     <div class="ct">
-      <div class="bc" onclick="openModal('tys-math')"><span class="rnum">1</span>
-        <div class="bcover"><div class="bca" style="background:linear-gradient(145deg,#0e2147,#1a3a7f,#0a1a40);color:#fff;"><div class="spine"></div><div class="deco" style="width:110px;height:110px;background:#4a80f0;top:-25px;right:-25px;"></div><span class="ctop">2026 Ed.</span><div class="cmid"><div class="cseries" style="color:#8ab0ff">Ten Year Series</div><div class="ctitle">O Level<br>Maths</div><div class="csubj" style="color:#8ab0ff">Mathematics</div><div class="clevel">2015–2024</div></div><div class="cbot" style="color:#8ab0ff">Complete Solutions</div></div></div>
-        <div class="binfo"><div class="bi-title">O Level Mathematics TYS</div><div class="dl-btns"><button class="dl-btn dl-a" onclick="event.stopPropagation();dlToast('paper','O Level Maths')">⬇ Download Assessment</button><button class="dl-btn dl-ans" onclick="event.stopPropagation();dlToast('answers','O Level Maths')">⬇ Download Answers</button></div></div>
-      </div>
-      <div class="bc" onclick="openModal('tys-eng')"><span class="rnum">2</span>
-        <div class="bcover"><div class="bca" style="background:linear-gradient(145deg,#7a1a1a,#c8102e,#5a0d0d);color:#fff;"><div class="spine"></div><div class="deco" style="width:100px;height:100px;background:#ff6080;top:-20px;right:-20px;"></div><span class="ctop">2026 Ed.</span><div class="cmid"><div class="cseries" style="color:#ffb0c0">Ten Year Series</div><div class="ctitle">O Level<br>English</div><div class="csubj" style="color:#ffb0c0">Language Arts</div><div class="clevel">2015–2024</div></div><div class="cbot" style="color:#ffb0c0">Paper 1 &amp; 2</div></div></div>
-        <div class="binfo"><div class="bi-title">O Level English Language TYS</div><div class="dl-btns"><button class="dl-btn dl-a" onclick="event.stopPropagation();dlToast('paper','O Level English')">⬇ Download Assessment</button><button class="dl-btn dl-ans" onclick="event.stopPropagation();dlToast('answers','O Level English')">⬇ Download Answers</button></div></div>
-      </div>
-      <div class="bc" onclick="openModal('tys-phy')"><span class="rnum">3</span>
-        <div class="bcover"><div class="bca" style="background:linear-gradient(145deg,#1a5e3a,#2a8a5a,#0d3521);color:#fff;"><div class="spine"></div><div class="deco" style="width:90px;height:90px;background:#50d090;top:-15px;right:-15px;"></div><span class="ctop">2026 Ed.</span><div class="cmid"><div class="cseries" style="color:#80ffb0">Ten Year Series</div><div class="ctitle">O Level<br>Physics</div><div class="csubj" style="color:#80ffb0">Pure Physics</div><div class="clevel">2015–2024</div></div><div class="cbot" style="color:#80ffb0">With Answers</div></div></div>
-        <div class="binfo"><div class="bi-title">O Level Physics TYS</div><div class="dl-btns"><button class="dl-btn dl-a" onclick="event.stopPropagation();dlToast('paper','O Level Physics')">⬇ Download Assessment</button><button class="dl-btn dl-ans" onclick="event.stopPropagation();dlToast('answers','O Level Physics')">⬇ Download Answers</button></div></div>
-      </div>
-      <div class="bc" onclick="openModal('tys-chem')"><span class="rnum">4</span>
-        <div class="bcover"><div class="bca" style="background:linear-gradient(145deg,#5a3a0a,#c88020,#3a2205);color:#fff;"><div class="spine"></div><div class="deco" style="width:85px;height:85px;background:#ffd080;top:-10px;right:-10px;"></div><span class="ctop">2026 Ed.</span><div class="cmid"><div class="cseries" style="color:#ffe090">Ten Year Series</div><div class="ctitle">O Level<br>Chemistry</div><div class="csubj" style="color:#ffe090">Pure Chem</div><div class="clevel">2015–2024</div></div><div class="cbot" style="color:#ffe090">Full Solutions</div></div></div>
-        <div class="binfo"><div class="bi-title">O Level Chemistry TYS</div><div class="dl-btns"><button class="dl-btn dl-a" onclick="event.stopPropagation();dlToast('paper','O Level Chemistry')">⬇ Download Assessment</button><button class="dl-btn dl-ans" onclick="event.stopPropagation();dlToast('answers','O Level Chemistry')">⬇ Download Answers</button></div></div>
-      </div>
-      <div class="bc" onclick="openModal('tys-bio')"><span class="rnum">5</span>
-        <div class="bcover"><div class="bca" style="background:linear-gradient(145deg,#1a4a5e,#20708a,#0d2f3a);color:#fff;"><div class="spine"></div><div class="deco" style="width:85px;height:85px;background:#40d0e0;top:-12px;right:-12px;"></div><span class="ctop">2026 Ed.</span><div class="cmid"><div class="cseries" style="color:#80e0f0">Ten Year Series</div><div class="ctitle">O Level<br>Biology</div><div class="csubj" style="color:#80e0f0">Life Sciences</div><div class="clevel">2015–2024</div></div><div class="cbot" style="color:#80e0f0">MCQ + SA</div></div></div>
-        <div class="binfo"><div class="bi-title">O Level Biology TYS</div><div class="dl-btns"><button class="dl-btn dl-a" onclick="event.stopPropagation();dlToast('paper','O Level Biology')">⬇ Download Assessment</button><button class="dl-btn dl-ans" onclick="event.stopPropagation();dlToast('answers','O Level Biology')">⬇ Download Answers</button></div></div>
-      </div>
-      <div class="bc" onclick="openModal('tys-amath')"><span class="rnum">6</span>
-        <div class="bcover"><div class="bca" style="background:linear-gradient(145deg,#3a1a5e,#6a30a0,#20103a);color:#fff;"><div class="spine"></div><div class="deco" style="width:85px;height:85px;background:#a060e0;top:-12px;right:-12px;"></div><span class="ctop">2026 Ed.</span><div class="cmid"><div class="cseries" style="color:#c090f0">Ten Year Series</div><div class="ctitle">O Level<br>A. Maths</div><div class="csubj" style="color:#c090f0">Additional Math</div><div class="clevel">2015–2024</div></div><div class="cbot" style="color:#c090f0">Full Worked</div></div></div>
-        <div class="binfo"><div class="bi-title">O Level A. Maths TYS</div><div class="dl-btns"><button class="dl-btn dl-a" onclick="event.stopPropagation();dlToast('paper','O Level A. Maths')">⬇ Download Assessment</button><button class="dl-btn dl-ans" onclick="event.stopPropagation();dlToast('answers','O Level A. Maths')">⬇ Download Answers</button></div></div>
-      </div>
-      <div class="bc" onclick="openModal('tys-ss')">
-        <div class="bcover"><div class="bca" style="background:linear-gradient(145deg,#3a2a1a,#7a5a2a,#1e1408);color:#fff;"><div class="spine"></div><div class="deco" style="width:80px;height:80px;background:#d0a040;top:-10px;right:-10px;"></div><div class="cmid"><div class="cseries" style="color:#f0c060">Ten Year Series</div><div class="ctitle">Social<br>Studies</div><div class="csubj" style="color:#f0c060">O Level SS</div><div class="clevel">2015–2024</div></div><div class="cbot" style="color:#f0c060">SBQ + EQ</div></div></div>
-        <div class="binfo"><div class="bi-title">O Level Social Studies TYS</div><div class="dl-btns"><button class="dl-btn dl-a" onclick="event.stopPropagation();dlToast('paper','O Level Social Studies')">⬇ Download Assessment</button><button class="dl-btn dl-ans" onclick="event.stopPropagation();dlToast('answers','O Level Social Studies')">⬇ Download Answers</button></div></div>
-      </div>
-      <div class="bc" onclick="openModal('tys-comb')">
-        <div class="bcover"><div class="bca" style="background:linear-gradient(145deg,#1e3a1e,#3a6a3a,#0d1e0d);color:#fff;"><div class="spine"></div><div class="deco" style="width:80px;height:80px;background:#80d880;top:-10px;right:-10px;"></div><div class="cmid"><div class="cseries" style="color:#a0e8a0">Ten Year Series</div><div class="ctitle">O Level<br>Comb. Sci</div><div class="csubj" style="color:#a0e8a0">Phy/Chem · Bio/Chem</div><div class="clevel">2015–2024</div></div><div class="cbot" style="color:#a0e8a0">MCQ + Structured</div></div></div>
-        <div class="binfo"><div class="bi-title">O Level Combined Science TYS</div><div class="dl-btns"><button class="dl-btn dl-a" onclick="event.stopPropagation();dlToast('paper','Combined Science')">⬇ Download Assessment</button><button class="dl-btn dl-ans" onclick="event.stopPropagation();dlToast('answers','Combined Science')">⬇ Download Answers</button></div></div>
-      </div>
+      <div class="bc" onclick="openModal('tys-math')"><div class="bcover"><div class="bca book-photo" style="background-image:url('https://www.eph.com.sg/wp-content/uploads/9789815214208_1-360x442.jpg');"></div></div><div class="book-title-under">P1 Champion in English Grammar</div></div>
+      <div class="bc" onclick="openModal('tys-eng')"><div class="bcover"><div class="bca book-photo" style="background-image:url('https://www.eph.com.sg/wp-content/uploads/9789815214215_1-360x494.jpg');"></div></div><div class="book-title-under">P2 Champion in English Grammar</div></div>
+      <div class="bc" onclick="openModal('tys-phy')"><div class="bcover"><div class="bca book-photo" style="background-image:url('https://www.eph.com.sg/wp-content/uploads/9789815214222_1-360x492.jpg');"></div></div><div class="book-title-under">P3 Champion in English Grammar</div></div>
+      <div class="bc" onclick="openModal('tys-chem')"><div class="bcover"><div class="bca book-photo" style="background-image:url('https://www.eph.com.sg/wp-content/uploads/9789815214239_1-360x492.jpg');"></div></div><div class="book-title-under">P4 Champion in English Grammar</div></div>
+      <div class="bc" onclick="openModal('tys-bio')"><div class="bcover"><div class="bca book-photo" style="background-image:url('https://www.eph.com.sg/wp-content/uploads/9789815214246_1-360x493.jpg');"></div></div><div class="book-title-under">P5 Champion in English Grammar</div></div>
+      <div class="bc" onclick="openModal('tys-amath')"><div class="bcover"><div class="bca book-photo" style="background-image:url('https://www.eph.com.sg/wp-content/uploads/9789815214253_1-360x493.jpg');"></div></div><div class="book-title-under">P6 Champion in English Grammar</div></div>
+      <div class="bc" onclick="openModal('tys-ss')"><div class="bcover"><div class="bca book-photo" style="background-image:url('https://www.eph.com.sg/wp-content/uploads/9789814946001_1-360x493.jpg');"></div></div><div class="book-title-under">P1 English Weekly Revision</div></div>
+      <div class="bc" onclick="openModal('tys-comb')"><div class="bcover"><div class="bca book-photo" style="background-image:url('https://www.eph.com.sg/wp-content/uploads/9789814946018_1-360x493.jpg');"></div></div><div class="book-title-under">P2 English Weekly Revision</div></div>
     </div>
     <button class="arr R" onclick="cscroll(this,1)">&#8250;</button>
   </div>
@@ -509,38 +518,20 @@
 </section>
 
 <!-- ROW 2: PSLE PAST YEAR PAPERS -->
-<section class="row" data-obs>
+<section class="row flat-cards" data-obs>
   <div class="rh">
-    <div class="rt"><span class="rt-bar"></span>PSLE Past Year Papers 2026 <span class="rbadge rb-new">New</span></div>
+    <div class="rt"><span class="rt-bar"></span>PSLE English Exam Preparation</div>
     <div class="see-all">See All <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></div>
   </div>
   <div class="cw">
     <button class="arr L" onclick="cscroll(this,-1)">&#8249;</button>
     <div class="ct">
-      <div class="bc" onclick="openModal('psle-math')">
-        <div class="bcover"><div class="bca" style="background:linear-gradient(145deg,#2a1a6e,#4a30a0,#180e42);color:#fff;"><div class="spine"></div><div class="deco" style="width:80px;height:80px;background:#8060d0;top:-10px;right:-10px;"></div><span class="ctop">PSLE 2026</span><div class="cmid"><div class="cseries" style="color:#b090f0">PSLE Past Year</div><div class="ctitle">Mathematics</div><div class="csubj" style="color:#b090f0">Primary 6</div></div><div class="cbot" style="color:#b090f0">+ Full Answers</div></div></div>
-        <div class="binfo"><div class="bi-title">PSLE Mathematics PYP</div><div class="dl-btns"><button class="dl-btn dl-a" onclick="event.stopPropagation();dlToast('paper','PSLE Mathematics')">⬇ Download Assessment</button><button class="dl-btn dl-ans" onclick="event.stopPropagation();dlToast('answers','PSLE Mathematics')">⬇ Download Answers</button></div></div>
-      </div>
-      <div class="bc" onclick="openModal('psle-eng')">
-        <div class="bcover"><div class="bca" style="background:linear-gradient(145deg,#1e4a1e,#3a7a3a,#102610);color:#fff;"><div class="spine"></div><div class="deco" style="width:75px;height:75px;background:#70d070;top:-10px;right:-10px;"></div><span class="ctop">PSLE 2026</span><div class="cmid"><div class="cseries" style="color:#90e090">PSLE Past Year</div><div class="ctitle">English<br>Language</div><div class="csubj" style="color:#90e090">Primary 6</div></div><div class="cbot" style="color:#90e090">Model Answers</div></div></div>
-        <div class="binfo"><div class="bi-title">PSLE English Language PYP</div><div class="dl-btns"><button class="dl-btn dl-a" onclick="event.stopPropagation();dlToast('paper','PSLE English')">⬇ Download Assessment</button><button class="dl-btn dl-ans" onclick="event.stopPropagation();dlToast('answers','PSLE English')">⬇ Download Answers</button></div></div>
-      </div>
-      <div class="bc" onclick="openModal('psle-sci')">
-        <div class="bcover"><div class="bca" style="background:linear-gradient(145deg,#5a2a0a,#a05018,#3a1a05);color:#fff;"><div class="spine"></div><div class="deco" style="width:70px;height:70px;background:#e09050;top:-10px;right:-10px;"></div><span class="ctop">PSLE 2026</span><div class="cmid"><div class="cseries" style="color:#f0b070">PSLE Past Year</div><div class="ctitle">Science</div><div class="csubj" style="color:#f0b070">Primary 6</div></div><div class="cbot" style="color:#f0b070">MCQ + OEQ</div></div></div>
-        <div class="binfo"><div class="bi-title">PSLE Science PYP</div><div class="dl-btns"><button class="dl-btn dl-a" onclick="event.stopPropagation();dlToast('paper','PSLE Science')">⬇ Download Assessment</button><button class="dl-btn dl-ans" onclick="event.stopPropagation();dlToast('answers','PSLE Science')">⬇ Download Answers</button></div></div>
-      </div>
-      <div class="bc" onclick="openModal('psle-chi')">
-        <div class="bcover"><div class="bca" style="background:linear-gradient(145deg,#6e1a1a,#b02828,#420e0e);color:#fff;"><div class="spine"></div><div class="deco" style="width:70px;height:70px;background:#f06060;top:-10px;right:-10px;"></div><span class="ctop">PSLE 2026</span><div class="cmid"><div class="cseries" style="color:#f09090">PSLE Past Year</div><div class="ctitle">华文<br>Chinese</div><div class="csubj" style="color:#f09090">Primary 6</div></div><div class="cbot" style="color:#f09090">附答案</div></div></div>
-        <div class="binfo"><div class="bi-title">PSLE Chinese Language PYP</div><div class="dl-btns"><button class="dl-btn dl-a" onclick="event.stopPropagation();dlToast('paper','PSLE Chinese')">⬇ Download Assessment</button><button class="dl-btn dl-ans" onclick="event.stopPropagation();dlToast('answers','PSLE Chinese')">⬇ Download Answers</button></div></div>
-      </div>
-      <div class="bc" onclick="openModal('psle-tam')">
-        <div class="bcover"><div class="bca" style="background:linear-gradient(145deg,#1a1a6e,#2828b0,#0e0e42);color:#fff;"><div class="spine"></div><div class="deco" style="width:70px;height:70px;background:#6060f0;top:-10px;right:-10px;"></div><span class="ctop">PSLE 2026</span><div class="cmid"><div class="cseries" style="color:#9090f0">PSLE Past Year</div><div class="ctitle">Tamil</div><div class="csubj" style="color:#9090f0">Primary 6</div></div><div class="cbot" style="color:#9090f0">Full Paper</div></div></div>
-        <div class="binfo"><div class="bi-title">PSLE Tamil Language PYP</div><div class="dl-btns"><button class="dl-btn dl-a" onclick="event.stopPropagation();dlToast('paper','PSLE Tamil')">⬇ Download Assessment</button><button class="dl-btn dl-ans" onclick="event.stopPropagation();dlToast('answers','PSLE Tamil')">⬇ Download Answers</button></div></div>
-      </div>
-      <div class="bc" onclick="openModal('psle-hchi')">
-        <div class="bcover"><div class="bca" style="background:linear-gradient(145deg,#4a0a0a,#8a1818,#280505);color:#fff;"><div class="spine"></div><div class="deco" style="width:70px;height:70px;background:#c04040;top:-10px;right:-10px;"></div><div class="cmid"><div class="cseries" style="color:#e08080">PSLE Past Year</div><div class="ctitle">Higher<br>华文</div><div class="csubj" style="color:#e08080">H. Chinese</div></div><div class="cbot" style="color:#e08080">附模范答案</div></div></div>
-        <div class="binfo"><div class="bi-title">PSLE Higher Chinese PYP</div><div class="dl-btns"><button class="dl-btn dl-a" onclick="event.stopPropagation();dlToast('paper','PSLE Higher Chinese')">⬇ Download Assessment</button><button class="dl-btn dl-ans" onclick="event.stopPropagation();dlToast('answers','PSLE Higher Chinese')">⬇ Download Answers</button></div></div>
-      </div>
+      <div class="bc" onclick="openModal('psle-math')"><div class="bcover"><div class="bca book-photo" style="background-image:url('https://www.eph.com.sg/wp-content/uploads/9789815214963_1-360x510.jpg');"></div></div><div class="book-title-under">PSLE English Specimen Papers: Paper 1 &amp; 2</div></div>
+      <div class="bc" onclick="openModal('psle-eng')"><div class="bcover"><div class="bca book-photo" style="background-image:url('https://www.eph.com.sg/wp-content/uploads/9789815214970_1-650x922.jpg');"></div></div><div class="book-title-under">PSLE English Specimen Papers: Paper 3 &amp; 4</div></div>
+      <div class="bc" onclick="openModal('psle-sci')"><div class="bcover"><div class="bca book-photo" style="background-image:url('https://www.eph.com.sg/wp-content/uploads/9789815267181_1-360x502.jpg');"></div></div><div class="book-title-under">PSLE English Exam Power Pack</div></div>
+      <div class="bc" onclick="openModal('psle-chi')"><div class="bcover"><div class="bca book-photo" style="background-image:url('https://www.eph.com.sg/wp-content/uploads/9789815091946_1-360x510.jpg');"></div></div><div class="book-title-under">PSLE English Exam Paper Package</div></div>
+      <div class="bc" onclick="openModal('psle-tam')"><div class="bcover"><div class="bca book-photo" style="background-image:url('https://www.eph.com.sg/wp-content/uploads/9789814832571_1-360x514.jpg');"></div></div><div class="book-title-under">PSLE Synthesis / Transformation</div></div>
+      <div class="bc" onclick="openModal('psle-hchi')"><div class="bcover"><div class="bca book-photo" style="background-image:url('https://www.eph.com.sg/wp-content/uploads/9789814662352_1-360x492.jpg');"></div></div><div class="book-title-under">Score in PSLE English Tips &amp; Practice</div></div>
     </div>
     <button class="arr R" onclick="cscroll(this,1)">&#8250;</button>
   </div>
@@ -556,72 +547,57 @@
 </div>
 
 <!-- ROW 3: PRIMARY WORKBOOKS -->
-<section class="row" data-obs>
+<section class="row flat-cards" data-obs>
   <div class="rh">
-    <div class="rt"><span class="rt-bar"></span>Primary School Workbooks <span class="rbadge rb-inc">Included</span></div>
+    <div class="rt"><span class="rt-bar"></span>Primary School Workbooks</div>
     <div class="see-all">See All <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></div>
   </div>
   <div class="cw">
     <button class="arr L" onclick="cscroll(this,-1)">&#8249;</button>
     <div class="ct">
       <div class="bc" onclick="openModal('p1-math')">
-        <div class="bcover"><div class="bca" style="background:linear-gradient(145deg,#ff6b35,#ff9500,#cc4400);color:#fff;"><div class="spine"></div><div class="deco" style="width:80px;height:80px;background:#ffcc00;top:-10px;right:-10px;"></div><div class="cmid"><div class="cseries" style="color:#ffe080">Earlybird</div><div class="ctitle">P1 Maths<br>Workbook</div><div class="csubj" style="color:#ffe080">Primary 1</div></div><div class="cbot" style="color:#ffe080">Term 1 &amp; 2</div></div></div>
-        <div class="binfo"><div class="bi-title">P1 Mathematics Workbook</div><div class="dl-btns"><button class="dl-btn dl-a" onclick="event.stopPropagation();dlToast('paper','P1 Maths Workbook')">⬇ Download Workbook</button><button class="dl-btn dl-ans" onclick="event.stopPropagation();dlToast('answers','P1 Maths Workbook')">⬇ Download Answers</button></div></div>
+        <div class="bcover"><div class="bca book-photo" style="background-image:url('https://www.eph.com.sg/wp-content/uploads/9789813127043_1-360x496.jpg');"></div></div>
+        <div class="book-title-under">P1 Daily Dose of English</div>
       </div>
       <div class="bc" onclick="openModal('p3-eng')">
-        <div class="bcover"><div class="bca" style="background:linear-gradient(145deg,#006994,#0099cc,#004466);color:#fff;"><div class="spine"></div><div class="deco" style="width:75px;height:75px;background:#44ddff;top:-10px;right:-10px;"></div><div class="cmid"><div class="cseries" style="color:#88eeff">My Pals</div><div class="ctitle">P3 English<br>Workbook</div><div class="csubj" style="color:#88eeff">Primary 3</div></div><div class="cbot" style="color:#88eeff">Revised Ed.</div></div></div>
-        <div class="binfo"><div class="bi-title">P3 English Workbook</div><div class="dl-btns"><button class="dl-btn dl-a" onclick="event.stopPropagation();dlToast('paper','P3 English Workbook')">⬇ Download Workbook</button><button class="dl-btn dl-ans" onclick="event.stopPropagation();dlToast('answers','P3 English Workbook')">⬇ Download Answers</button></div></div>
+        <div class="bcover"><div class="bca book-photo" style="background-image:url('https://www.eph.com.sg/wp-content/uploads/9789813128002_1-360x499.jpg');"></div></div>
+        <div class="book-title-under">P2 Daily Dose of English</div>
       </div>
       <div class="bc" onclick="openModal('p5-sci')">
-        <div class="bcover"><div class="bca" style="background:linear-gradient(145deg,#2d6a4f,#52b788,#1b4332);color:#fff;"><div class="spine"></div><div class="deco" style="width:70px;height:70px;background:#95d5b2;top:-10px;right:-10px;"></div><div class="cmid"><div class="cseries" style="color:#b7e4c7">Science Exp.</div><div class="ctitle">P5 Science<br>Workbook</div><div class="csubj" style="color:#b7e4c7">Primary 5</div></div><div class="cbot" style="color:#b7e4c7">2024 Syllabus</div></div></div>
-        <div class="binfo"><div class="bi-title">P5 Science Activity Workbook</div><div class="dl-btns"><button class="dl-btn dl-a" onclick="event.stopPropagation();dlToast('paper','P5 Science Workbook')">⬇ Download Workbook</button><button class="dl-btn dl-ans" onclick="event.stopPropagation();dlToast('answers','P5 Science Workbook')">⬇ Download Answers</button></div></div>
+        <div class="bcover"><div class="bca book-photo" style="background-image:url('https://www.eph.com.sg/wp-content/uploads/9789813128019_1-360x496.jpg');"></div></div>
+        <div class="book-title-under">P3 Daily Dose of English</div>
       </div>
       <div class="bc" onclick="openModal('p4-chi')">
-        <div class="bcover"><div class="bca" style="background:linear-gradient(145deg,#9b2226,#e63946,#660000);color:#fff;"><div class="spine"></div><div class="deco" style="width:70px;height:70px;background:#ff8fa3;top:-10px;right:-10px;"></div><div class="cmid"><div class="cseries" style="color:#ffb3c1">华文乐园</div><div class="ctitle">P4 华文<br>练习册</div><div class="csubj" style="color:#ffb3c1">Primary 4</div></div><div class="cbot" style="color:#ffb3c1">附答案</div></div></div>
-        <div class="binfo"><div class="bi-title">P4 Chinese Workbook (华文)</div><div class="dl-btns"><button class="dl-btn dl-a" onclick="event.stopPropagation();dlToast('paper','P4 华文练习册')">⬇ Download Workbook</button><button class="dl-btn dl-ans" onclick="event.stopPropagation();dlToast('answers','P4 华文练习册')">⬇ Download Answers</button></div></div>
+        <div class="bcover"><div class="bca book-photo" style="background-image:url('https://www.eph.com.sg/wp-content/uploads/9789815267426_1-360x491.jpg');"></div></div>
+        <div class="book-title-under">P5 Daily Dose of English</div>
       </div>
       <div class="bc" onclick="openModal('p6-math')">
-        <div class="bcover"><div class="bca" style="background:linear-gradient(145deg,#4a0e8f,#7b2ff7,#280860);color:#fff;"><div class="spine"></div><div class="deco" style="width:70px;height:70px;background:#c77dff;top:-10px;right:-10px;"></div><span class="ctop">⭐ Top Pick</span><div class="cmid"><div class="cseries" style="color:#e0aaff">Intensive</div><div class="ctitle">P6 Maths<br>Practice</div><div class="csubj" style="color:#e0aaff">Primary 6</div></div><div class="cbot" style="color:#e0aaff">500 Questions</div></div></div>
-        <div class="binfo"><div class="bi-title">P6 Maths Intensive Practice</div><div class="dl-btns"><button class="dl-btn dl-a" onclick="event.stopPropagation();dlToast('paper','P6 Maths Intensive')">⬇ Download Workbook</button><button class="dl-btn dl-ans" onclick="event.stopPropagation();dlToast('answers','P6 Maths Intensive')">⬇ Download Answers</button></div></div>
+        <div class="bcover"><div class="bca book-photo" style="background-image:url('https://www.eph.com.sg/wp-content/uploads/9789815267433_1-360x493.jpg');"></div></div>
+        <div class="book-title-under">P6 Daily Dose of English</div>
       </div>
       <div class="bc" onclick="openModal('p2-eng')">
-        <div class="bcover"><div class="bca" style="background:linear-gradient(145deg,#0a3d62,#1e6f9f,#051d2e);color:#fff;"><div class="spine"></div><div class="deco" style="width:70px;height:70px;background:#4fc3f7;top:-10px;right:-10px;"></div><div class="cmid"><div class="cseries" style="color:#81d4fa">Comprehension</div><div class="ctitle">P2 English<br>Compr.</div><div class="csubj" style="color:#81d4fa">Primary 2</div></div><div class="cbot" style="color:#81d4fa">Graded Texts</div></div></div>
-        <div class="binfo"><div class="bi-title">P2 English Comprehension WB</div><div class="dl-btns"><button class="dl-btn dl-a" onclick="event.stopPropagation();dlToast('paper','P2 English Comprehension')">⬇ Download Workbook</button><button class="dl-btn dl-ans" onclick="event.stopPropagation();dlToast('answers','P2 English Comprehension')">⬇ Download Answers</button></div></div>
+        <div class="bcover"><div class="bca book-photo" style="background-image:url('https://www.eph.com.sg/wp-content/uploads/9789814574891_1-360x493.jpg');"></div></div>
+        <div class="book-title-under">P4 Daily Dose of English</div>
       </div>
     </div>
     <button class="arr R" onclick="cscroll(this,1)">&#8250;</button>
   </div>
 </section>
 
-<!-- ROW 4: A LEVEL -->
-<section class="row" data-obs>
+<!-- ROW 4: SECONDARY MIX -->
+<section class="row flat-cards" data-obs>
   <div class="rh">
-    <div class="rt"><span class="rt-bar"></span>A Level &amp; JC Assessment <span class="rbadge rb-top">Editor's Pick</span></div>
+    <div class="rt"><span class="rt-bar"></span>Secondary Maths &amp; Science Picks</div>
     <div class="see-all">See All <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></div>
   </div>
   <div class="cw">
     <button class="arr L" onclick="cscroll(this,-1)">&#8249;</button>
     <div class="ct">
-      <div class="bc" onclick="openModal('al-h2m')">
-        <div class="bcover"><div class="bca" style="background:linear-gradient(145deg,#1a1a3e,#2e2e7a,#0d0d20);color:#fff;"><div class="spine"></div><div class="deco" style="width:75px;height:75px;background:#6060d0;top:-10px;right:-10px;"></div><span class="ctop">A Level</span><div class="cmid"><div class="cseries" style="color:#a0a0f0">TYS A Level</div><div class="ctitle">H2 Maths</div><div class="csubj" style="color:#a0a0f0">JC Year 1 &amp; 2</div><div class="clevel">2015–2024</div></div><div class="cbot" style="color:#a0a0f0">Full Solutions</div></div></div>
-        <div class="binfo"><div class="bi-title">A Level H2 Mathematics TYS</div><div class="dl-btns"><button class="dl-btn dl-a" onclick="event.stopPropagation();dlToast('paper','A Level H2 Maths')">⬇ Download Assessment</button><button class="dl-btn dl-ans" onclick="event.stopPropagation();dlToast('answers','A Level H2 Maths')">⬇ Download Answers</button></div></div>
-      </div>
-      <div class="bc" onclick="openModal('al-gp')">
-        <div class="bcover"><div class="bca" style="background:linear-gradient(145deg,#3a2a1a,#7a5a2a,#1e1408);color:#fff;"><div class="spine"></div><div class="deco" style="width:70px;height:70px;background:#d0a040;top:-10px;right:-10px;"></div><span class="ctop">A Level</span><div class="cmid"><div class="cseries" style="color:#f0c060">TYS A Level</div><div class="ctitle">General<br>Paper</div><div class="csubj" style="color:#f0c060">H1 GP</div><div class="clevel">2015–2024</div></div><div class="cbot" style="color:#f0c060">Essay + AQ</div></div></div>
-        <div class="binfo"><div class="bi-title">A Level General Paper TYS</div><div class="dl-btns"><button class="dl-btn dl-a" onclick="event.stopPropagation();dlToast('paper','A Level GP')">⬇ Download Assessment</button><button class="dl-btn dl-ans" onclick="event.stopPropagation();dlToast('answers','A Level GP')">⬇ Download Answers</button></div></div>
-      </div>
-      <div class="bc" onclick="openModal('al-h2c')">
-        <div class="bcover"><div class="bca" style="background:linear-gradient(145deg,#1e3a1e,#2a6a2a,#0d1e0d);color:#fff;"><div class="spine"></div><div class="deco" style="width:70px;height:70px;background:#60c060;top:-10px;right:-10px;"></div><span class="ctop">A Level</span><div class="cmid"><div class="cseries" style="color:#80e080">TYS A Level</div><div class="ctitle">H2<br>Chemistry</div><div class="csubj" style="color:#80e080">JC Year 1 &amp; 2</div><div class="clevel">2015–2024</div></div><div class="cbot" style="color:#80e080">+ Data Booklet</div></div></div>
-        <div class="binfo"><div class="bi-title">A Level H2 Chemistry TYS</div><div class="dl-btns"><button class="dl-btn dl-a" onclick="event.stopPropagation();dlToast('paper','A Level H2 Chemistry')">⬇ Download Assessment</button><button class="dl-btn dl-ans" onclick="event.stopPropagation();dlToast('answers','A Level H2 Chemistry')">⬇ Download Answers</button></div></div>
-      </div>
-      <div class="bc" onclick="openModal('al-h2b')">
-        <div class="bcover"><div class="bca" style="background:linear-gradient(145deg,#1a4a5e,#1a7090,#0d2830);color:#fff;"><div class="spine"></div><div class="deco" style="width:70px;height:70px;background:#40c0d8;top:-10px;right:-10px;"></div><span class="ctop">A Level</span><div class="cmid"><div class="cseries" style="color:#80d8e8">TYS A Level</div><div class="ctitle">H2<br>Biology</div><div class="csubj" style="color:#80d8e8">JC Year 1 &amp; 2</div><div class="clevel">2015–2024</div></div><div class="cbot" style="color:#80d8e8">Full Marking</div></div></div>
-        <div class="binfo"><div class="bi-title">A Level H2 Biology TYS</div><div class="dl-btns"><button class="dl-btn dl-a" onclick="event.stopPropagation();dlToast('paper','A Level H2 Biology')">⬇ Download Assessment</button><button class="dl-btn dl-ans" onclick="event.stopPropagation();dlToast('answers','A Level H2 Biology')">⬇ Download Answers</button></div></div>
-      </div>
-      <div class="bc" onclick="openModal('al-econ')">
-        <div class="bcover"><div class="bca" style="background:linear-gradient(145deg,#3a1a5e,#5a2a8a,#20103a);color:#fff;"><div class="spine"></div><div class="deco" style="width:70px;height:70px;background:#a060d0;top:-10px;right:-10px;"></div><span class="ctop">A Level</span><div class="cmid"><div class="cseries" style="color:#c090e0">TYS A Level</div><div class="ctitle">H1/H2<br>Economics</div><div class="csubj" style="color:#c090e0">JC</div><div class="clevel">2015–2024</div></div><div class="cbot" style="color:#c090e0">Case Study</div></div></div>
-        <div class="binfo"><div class="bi-title">A Level Economics TYS</div><div class="dl-btns"><button class="dl-btn dl-a" onclick="event.stopPropagation();dlToast('paper','A Level Economics')">⬇ Download Assessment</button><button class="dl-btn dl-ans" onclick="event.stopPropagation();dlToast('answers','A Level Economics')">⬇ Download Answers</button></div></div>
-      </div>
+      <div class="bc" onclick="openModal('al-h2m')"><div class="bcover"><div class="bca book-photo" style="background-image:url('https://www.eph.com.sg/wp-content/uploads/9789815214925_1-360x493.jpg');"></div></div><div class="book-title-under">S1/G3 Topical Maths</div></div>
+      <div class="bc" onclick="openModal('al-gp')"><div class="bcover"><div class="bca book-photo" style="background-image:url('https://www.eph.com.sg/wp-content/uploads/9789815318302_1-360x494.jpg');"></div></div><div class="book-title-under">S2/G3 Topical Maths</div></div>
+      <div class="bc" onclick="openModal('al-h2c')"><div class="bcover"><div class="bca book-photo" style="background-image:url('https://www.eph.com.sg/wp-content/uploads/9789815043532_1-360x494.jpg');"></div></div><div class="book-title-under">O Level (G3) Biology Fast Forward</div></div>
+      <div class="bc" onclick="openModal('al-h2b')"><div class="bcover"><div class="bca book-photo" style="background-image:url('https://www.eph.com.sg/wp-content/uploads/9789815043525_1-360x494.jpg');"></div></div><div class="book-title-under">O Level (G3) Chemistry Fast Forward</div></div>
+      <div class="bc" onclick="openModal('al-econ')"><div class="bcover"><div class="bca book-photo" style="background-image:url('https://www.eph.com.sg/wp-content/uploads/9789815043518_1-360x494.jpg');"></div></div><div class="book-title-under">O Level (G3) Physics Fast Forward</div></div>
     </div>
     <button class="arr R" onclick="cscroll(this,1)">&#8250;</button>
   </div>
@@ -728,7 +704,7 @@
         <div style="font-size:12px;color:var(--muted);">All plans include unlimited assessment + answers downloads as separate PDFs. Cancel anytime.</div>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;">
-        <div style="background:var(--bg2);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:20px 16px;cursor:pointer;transition:border-color .2s;" onmouseenter="this.style.borderColor='#c8102e'" onmouseleave="this.style.borderColor='rgba(255,255,255,.08)'" onclick="subscribe('starter')">
+        <div style="background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:20px 16px;cursor:pointer;transition:border-color .2s;" onmouseenter="this.style.borderColor='#c8102e'" onmouseleave="this.style.borderColor='rgba(15,23,42,.12)'" onclick="subscribe('starter')">
           <div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;">Starter</div>
           <div style="font-size:28px;font-weight:900;">$9.90</div>
           <div style="font-size:10px;color:var(--muted);margin-bottom:14px;">per month</div>
@@ -743,7 +719,7 @@
           <div style="font-size:11px;color:var(--muted);line-height:1.9;">✓ Unlimited downloads<br>✓ All levels<br>✓ 3 devices<br>✓ Offline app</div>
           <button class="plan-btn pbr" style="margin-top:16px;width:100%;">7-Day Free Trial</button>
         </div>
-        <div style="background:var(--bg2);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:20px 16px;cursor:pointer;transition:border-color .2s;" onmouseenter="this.style.borderColor='#c8102e'" onmouseleave="this.style.borderColor='rgba(255,255,255,.08)'" onclick="subscribe('family')">
+        <div style="background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:20px 16px;cursor:pointer;transition:border-color .2s;" onmouseenter="this.style.borderColor='#c8102e'" onmouseleave="this.style.borderColor='rgba(15,23,42,.12)'" onclick="subscribe('family')">
           <div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;">Family</div>
           <div style="font-size:28px;font-weight:900;">$24.90</div>
           <div style="font-size:10px;color:var(--muted);margin-bottom:14px;">per month · 5 profiles</div>
@@ -780,48 +756,39 @@
 
   // Book data
   const books = {
-    'tys-math':  { tag:'TEN YEAR SERIES', title:'O Level Mathematics', sub:'2015–2024 · E. Maths & A. Maths', desc:'Comprehensive O Level Mathematics past year papers. The assessment download is the clean paper for timed practice. The answers download contains fully worked step-by-step solutions with mark allocation for every question.', bg:'linear-gradient(135deg,#0e2147,#1a3a7f)' },
-    'tys-eng':   { tag:'TEN YEAR SERIES', title:'O Level English Language', sub:'2015–2024 · Paper 1 & 2', desc:'Complete O Level English Language papers. Assessment PDF: clean paper for Composition, Situational Writing, Comprehension, and Language Use. Answers PDF: model essays, annotated answers, and marking rubrics.', bg:'linear-gradient(135deg,#7a1a1a,#c8102e)' },
-    'tys-phy':   { tag:'TEN YEAR SERIES', title:'O Level Physics', sub:'2015–2024 · Pure Physics', desc:'Pure Physics past year papers with full solutions. Assessment PDF for timed practice. Answers PDF contains MCQ explanations, full structured question mark schemes, and free response model answers.', bg:'linear-gradient(135deg,#1a5e3a,#2a8a5a)' },
-    'tys-chem':  { tag:'TEN YEAR SERIES', title:'O Level Chemistry', sub:'2015–2024 · Pure Chemistry', desc:'O Level Pure Chemistry papers. Assessment PDF includes the clean paper with data booklet. Answers PDF provides detailed worked solutions with periodic table references and mark allocation.', bg:'linear-gradient(135deg,#5a3a0a,#c88020)' },
-    'tys-bio':   { tag:'TEN YEAR SERIES', title:'O Level Biology', sub:'2015–2024 · Life Sciences', desc:'O Level Biology MCQ and structured answer papers. Assessment PDF for clean practice. Answers PDF includes detailed biological diagrams, annotated mark schemes, and examiner commentary.', bg:'linear-gradient(135deg,#1a4a5e,#20708a)' },
-    'tys-amath': { tag:'TEN YEAR SERIES', title:'O Level Additional Maths', sub:'2015–2024 · Additional Mathematics', desc:'A-Math past year papers. Assessment PDF is the clean exam paper. Answers PDF shows every step of working clearly — from method marks through to final answers — for all topics including calculus and trigonometry.', bg:'linear-gradient(135deg,#3a1a5e,#6a30a0)' },
-    'tys-ss':    { tag:'TEN YEAR SERIES', title:'O Level Social Studies', sub:'2015–2024 · SBQ & EQ', desc:'Social Studies past year papers. Assessment PDF contains the full paper with sources. Answers PDF includes model SBQ responses, annotated source analysis, and EQ essay frameworks with mark breakdowns.', bg:'linear-gradient(135deg,#3a2a1a,#7a5a2a)' },
-    'tys-comb':  { tag:'TEN YEAR SERIES', title:'O Level Combined Science', sub:'2015–2024 · Physics/Chemistry · Biology/Chemistry', desc:'Combined Science papers (Phy/Chem or Bio/Chem combination). Clean assessment paper download for practice. Full mark schemes and worked solutions in the separate answers download.', bg:'linear-gradient(135deg,#1e3a1e,#3a6a3a)' },
-    'psle-math': { tag:'PSLE PAST YEAR PAPERS', title:'PSLE Mathematics', sub:'Primary 6 · 2018–2024', desc:'Official PSLE Mathematics past year papers. Download the assessment PDF for timed exam simulation. The answers PDF provides full worked solutions for every question including challenging heuristics problems.', bg:'linear-gradient(135deg,#2a1a6e,#4a30a0)' },
-    'psle-eng':  { tag:'PSLE PAST YEAR PAPERS', title:'PSLE English Language', sub:'Primary 6 · 2018–2024', desc:'PSLE English papers. Assessment PDF contains the full paper — composition, comprehension, and language use. Answers PDF includes model compositions, suggested answers, and detailed marking guidance.', bg:'linear-gradient(135deg,#1e4a1e,#3a7a3a)' },
-    'psle-sci':  { tag:'PSLE PAST YEAR PAPERS', title:'PSLE Science', sub:'Primary 6 · 2018–2024', desc:'PSLE Science papers with MCQ and Open-Ended Questions. Assessment PDF for clean timed practice. Answers PDF contains complete marking schemes with accepted and rejected answer points clearly indicated.', bg:'linear-gradient(135deg,#5a2a0a,#a05018)' },
-    'psle-chi':  { tag:'PSLE 历年试题', title:'PSLE 华文', sub:'小六 · 2018–2024', desc:'PSLE华文历年试卷。试卷PDF供限时练习使用。答案PDF提供标准答案和模范作文，帮助学生了解评分标准。', bg:'linear-gradient(135deg,#6e1a1a,#b02828)' },
-    'psle-tam':  { tag:'PSLE PAST YEAR PAPERS', title:'PSLE Tamil Language', sub:'Primary 6 · 2018–2024', desc:'PSLE Tamil Language past year papers. Download the clean assessment paper for timed practice. Full model answers and marking schemes are available as the separate answers download.', bg:'linear-gradient(135deg,#1a1a6e,#2828b0)' },
-    'psle-hchi': { tag:'PSLE 历年试题', title:'PSLE Higher Chinese', sub:'小六 · 2018–2024 · 高华', desc:'PSLE高级华文历年试卷。试卷PDF供独立练习使用，答案PDF包含详细解答和评分指南。', bg:'linear-gradient(135deg,#4a0a0a,#8a1818)' },
-    'p1-math':   { tag:'PRIMARY WORKBOOK', title:'P1 Mathematics Workbook', sub:'Earlybird Series · Primary 1 · Term 1 & 2', desc:'P1 Mathematics workbook aligned with the MOE syllabus. Workbook PDF includes all activities and exercises. Answers PDF is for parents to mark completed work — keep it separate until the child is done!', bg:'linear-gradient(135deg,#ff6b35,#ff9500)' },
-    'p3-eng':    { tag:'PRIMARY WORKBOOK', title:'P3 English Workbook', sub:'My Pals Are Here · Primary 3', desc:'Revised P3 English workbook with comprehension passages, grammar exercises, and vocabulary activities. Download the workbook for the student; download the answer key separately for marking after completion.', bg:'linear-gradient(135deg,#006994,#0099cc)' },
-    'p5-sci':    { tag:'PRIMARY WORKBOOK', title:'P5 Science Activity Workbook', sub:'2024 MOE Syllabus · Primary 5', desc:'P5 Science workbook aligned with the latest syllabus covering all six themes. Student workbook and teacher/parent answer key are separate downloads so answers are kept hidden during practice.', bg:'linear-gradient(135deg,#2d6a4f,#52b788)' },
-    'p4-chi':    { tag:'小学练习册', title:'P4 华文练习册', sub:'华文乐园 · 小四', desc:'按最新课程纲要编排的小四华文练习册。练习册PDF供学生练习使用，答案PDF供家长批改，两者分开下载，避免学生提前看到答案。', bg:'linear-gradient(135deg,#9b2226,#e63946)' },
-    'p6-math':   { tag:'PRIMARY WORKBOOK', title:'P6 Maths Intensive Practice', sub:'500 Questions · PSLE Preparation', desc:'Intensive P6 Maths practice with 500 systematically arranged questions covering all PSLE topics. The workbook PDF is clean for student use. Fully worked answers with marks allocation in the separate answers PDF.', bg:'linear-gradient(135deg,#4a0e8f,#7b2ff7)' },
-    'p2-eng':    { tag:'PRIMARY WORKBOOK', title:'P2 English Comprehension', sub:'Graded Texts · Primary 2', desc:'Graded comprehension passages for P2 students. Workbook PDF contains all passages and questions. Model answers and marking guidelines are in the separate answers download — for parents to check after the child completes each passage.', bg:'linear-gradient(135deg,#0a3d62,#1e6f9f)' },
-    'al-h2m':    { tag:'A LEVEL TEN YEAR SERIES', title:'A Level H2 Mathematics', sub:'2015–2024 · JC Year 1 & 2', desc:'H2 Mathematics past year papers. Assessment PDF for timed practice under real exam conditions. Answers PDF contains detailed worked solutions for every Pure Maths and Statistics question.', bg:'linear-gradient(135deg,#1a1a3e,#2e2e7a)' },
-    'al-gp':     { tag:'A LEVEL TEN YEAR SERIES', title:'A Level General Paper', sub:'2015–2024 · H1 GP · Essay & AQ', desc:'GP past year papers. Assessment PDF is the clean paper. Answers PDF includes model essay responses at distinction level, annotated AQ source material, and mark allocation commentary from experienced GP tutors.', bg:'linear-gradient(135deg,#3a2a1a,#7a5a2a)' },
-    'al-h2c':    { tag:'A LEVEL TEN YEAR SERIES', title:'A Level H2 Chemistry', sub:'2015–2024 · JC Year 1 & 2', desc:'H2 Chemistry papers with data booklet included in the assessment PDF. Full worked solutions with clear reasoning for all structured and free response questions in the separate answers download.', bg:'linear-gradient(135deg,#1e3a1e,#2a6a2a)' },
-    'al-h2b':    { tag:'A LEVEL TEN YEAR SERIES', title:'A Level H2 Biology', sub:'2015–2024 · JC Year 1 & 2', desc:'H2 Biology past year papers. Clean assessment PDF for timed practice. Answers PDF provides comprehensive mark schemes with model responses for free response questions and annotated diagrams.', bg:'linear-gradient(135deg,#1a4a5e,#1a7090)' },
-    'al-econ':   { tag:'A LEVEL TEN YEAR SERIES', title:'A Level Economics', sub:'2015–2024 · H1 & H2 · JC', desc:'Economics papers including Case Study and Essay questions. Assessment PDF is the full paper. Answers PDF contains model case study responses, annotated data interpretation, and graded essay responses.', bg:'linear-gradient(135deg,#3a1a5e,#5a2a8a)' },
+    'tys-math':  { tag:'EPH PRIMARY ENGLISH', title:'P1 Champion in English Grammar', sub:'Primary 1 · Lim Geok Choo', desc:'Real EPH catalogue title used for wireframe: P1 Champion in English Grammar.', bg:'url(https://www.eph.com.sg/wp-content/uploads/9789815214208_1-360x442.jpg) center/cover no-repeat' },
+    'tys-eng':   { tag:'EPH PRIMARY ENGLISH', title:'P2 Champion in English Grammar', sub:'Primary 2 · Lim Geok Choo', desc:'Real EPH catalogue title used for wireframe: P2 Champion in English Grammar.', bg:'url(https://www.eph.com.sg/wp-content/uploads/9789815214215_1-360x494.jpg) center/cover no-repeat' },
+    'tys-phy':   { tag:'EPH PRIMARY ENGLISH', title:'P3 Champion in English Grammar', sub:'Primary 3 · Lim Geok Choo', desc:'Real EPH catalogue title used for wireframe: P3 Champion in English Grammar.', bg:'url(https://www.eph.com.sg/wp-content/uploads/9789815214222_1-360x492.jpg) center/cover no-repeat' },
+    'tys-chem':  { tag:'EPH PRIMARY ENGLISH', title:'P4 Champion in English Grammar', sub:'Primary 4 · Lim Geok Choo', desc:'Real EPH catalogue title used for wireframe: P4 Champion in English Grammar.', bg:'url(https://www.eph.com.sg/wp-content/uploads/9789815214239_1-360x492.jpg) center/cover no-repeat' },
+    'tys-bio':   { tag:'EPH PRIMARY ENGLISH', title:'P5 Champion in English Grammar', sub:'Primary 5 · Lim Geok Choo', desc:'Real EPH catalogue title used for wireframe: P5 Champion in English Grammar.', bg:'url(https://www.eph.com.sg/wp-content/uploads/9789815214246_1-360x493.jpg) center/cover no-repeat' },
+    'tys-amath': { tag:'EPH PRIMARY ENGLISH', title:'P6 Champion in English Grammar', sub:'Primary 6 · Lim Geok Choo', desc:'Real EPH catalogue title used for wireframe: P6 Champion in English Grammar.', bg:'url(https://www.eph.com.sg/wp-content/uploads/9789815214253_1-360x493.jpg) center/cover no-repeat' },
+    'tys-ss':    { tag:'EPH PRIMARY ENGLISH', title:'P1 English Weekly Revision', sub:'Primary 1 · Naaz Thaker', desc:'Real EPH catalogue title used for wireframe: P1 English Weekly Revision.', bg:'url(https://www.eph.com.sg/wp-content/uploads/9789814946001_1-360x493.jpg) center/cover no-repeat' },
+    'tys-comb':  { tag:'EPH PRIMARY ENGLISH', title:'P2 English Weekly Revision', sub:'Primary 2 · Naaz Thaker', desc:'Real EPH catalogue title used for wireframe: P2 English Weekly Revision.', bg:'url(https://www.eph.com.sg/wp-content/uploads/9789814946018_1-360x493.jpg) center/cover no-repeat' },
+    'psle-math': { tag:'EPH PSLE ENGLISH', title:'PSLE English Specimen Papers: Paper 1 Writing and Paper 2 Language Use', sub:'PSLE · Lim Geok Choo', desc:'Real EPH catalogue title used for wireframe.', bg:'url(https://www.eph.com.sg/wp-content/uploads/9789815214963_1-360x510.jpg) center/cover no-repeat' },
+    'psle-eng':  { tag:'EPH PSLE ENGLISH', title:'PSLE English Specimen Papers: Paper 3 Listening and Paper 4 Oral', sub:'PSLE · Lim Geok Choo', desc:'Real EPH catalogue title used for wireframe.', bg:'url(https://www.eph.com.sg/wp-content/uploads/9789815214970_1-650x922.jpg) center/cover no-repeat' },
+    'psle-sci':  { tag:'EPH PSLE ENGLISH', title:'PSLE English Exam Power Pack', sub:'PSLE', desc:'Real EPH catalogue title used for wireframe.', bg:'url(https://www.eph.com.sg/wp-content/uploads/9789815267181_1-360x502.jpg) center/cover no-repeat' },
+    'psle-chi':  { tag:'EPH PSLE ENGLISH', title:'PSLE English Exam Paper Package', sub:'PSLE · Claire Leow', desc:'Real EPH catalogue title used for wireframe.', bg:'url(https://www.eph.com.sg/wp-content/uploads/9789815091946_1-360x510.jpg) center/cover no-repeat' },
+    'psle-tam':  { tag:'EPH PSLE ENGLISH', title:'PSLE Synthesis / Transformation', sub:'PSLE · Claire Leow', desc:'Real EPH catalogue title used for wireframe.', bg:'url(https://www.eph.com.sg/wp-content/uploads/9789814832571_1-360x514.jpg) center/cover no-repeat' },
+    'psle-hchi': { tag:'EPH PSLE ENGLISH', title:'Score in PSLE English Tips & Practice', sub:'PSLE · Seow Shu Ling', desc:'Real EPH catalogue title used for wireframe.', bg:'url(https://www.eph.com.sg/wp-content/uploads/9789814662352_1-360x492.jpg) center/cover no-repeat' },
+    'p1-math':   { tag:'EPH PRIMARY ENGLISH', title:'P1 Daily Dose of English', sub:'Primary 1 · Claire Leow', desc:'EPH Primary English title: P1 Daily Dose of English. This mock entry uses the real book cover and title from the EPH Primary English catalogue page for prototype demonstration.', bg:'url(https://www.eph.com.sg/wp-content/uploads/9789813127043_1-360x496.jpg) center/cover no-repeat' },
+    'p3-eng':    { tag:'EPH PRIMARY ENGLISH', title:'P2 Daily Dose of English', sub:'Primary 2 · Claire Leow', desc:'EPH Primary English title: P2 Daily Dose of English. This mock entry uses the real book cover and title from the EPH Primary English catalogue page for prototype demonstration.', bg:'url(https://www.eph.com.sg/wp-content/uploads/9789813128002_1-360x499.jpg) center/cover no-repeat' },
+    'p5-sci':    { tag:'EPH PRIMARY ENGLISH', title:'P3 Daily Dose of English', sub:'Primary 3 · Claire Leow', desc:'EPH Primary English title: P3 Daily Dose of English. This mock entry uses the real book cover and title from the EPH Primary English catalogue page for prototype demonstration.', bg:'url(https://www.eph.com.sg/wp-content/uploads/9789813128019_1-360x496.jpg) center/cover no-repeat' },
+    'p4-chi':    { tag:'EPH PRIMARY ENGLISH', title:'P5 Daily Dose of English', sub:'Primary 5 · Cindy Lim', desc:'EPH Primary English title: P5 Daily Dose of English. This mock entry uses the real book cover and title from the EPH Primary English catalogue page for prototype demonstration.', bg:'url(https://www.eph.com.sg/wp-content/uploads/9789815267426_1-360x491.jpg) center/cover no-repeat' },
+    'p6-math':   { tag:'EPH PRIMARY ENGLISH', title:'P6 Daily Dose of English', sub:'Primary 6 · Cindy Lim', desc:'EPH Primary English title: P6 Daily Dose of English. This mock entry uses the real book cover and title from the EPH Primary English catalogue page for prototype demonstration.', bg:'url(https://www.eph.com.sg/wp-content/uploads/9789815267433_1-360x493.jpg) center/cover no-repeat' },
+    'p2-eng':    { tag:'EPH PRIMARY ENGLISH', title:'P4 Daily Dose of English', sub:'Primary 4 · Cindy Lim', desc:'EPH Primary English title: P4 Daily Dose of English. This mock entry uses the real book cover and title from the EPH Primary English catalogue page for prototype demonstration.', bg:'url(https://www.eph.com.sg/wp-content/uploads/9789814574891_1-360x493.jpg) center/cover no-repeat' },
+    'al-h2m':    { tag:'EPH SECONDARY MATHS', title:'S1/G3 Topical Maths', sub:'Secondary 1 Express · Dylan Fong', desc:'Real EPH Secondary Maths title. Topic-based practice aligned to secondary syllabus with focused worked examples.', bg:'url(https://www.eph.com.sg/wp-content/uploads/9789815214925_1-360x493.jpg) center/cover no-repeat' },
+    'al-gp':     { tag:'EPH SECONDARY MATHS', title:'S2/G3 Topical Maths', sub:'Secondary 2 Express · Dylan Fong', desc:'Real EPH Secondary Maths title. Structured topical questions to build exam readiness and method accuracy.', bg:'url(https://www.eph.com.sg/wp-content/uploads/9789815318302_1-360x494.jpg) center/cover no-repeat' },
+    'al-h2c':    { tag:'EPH SECONDARY SCIENCE', title:'O Level (G3) Biology Fast Forward', sub:'O Level Biology · Eunice Lin', desc:'Real EPH Secondary Science title. Concise content revision plus exam-style biology practice.', bg:'url(https://www.eph.com.sg/wp-content/uploads/9789815043532_1-360x494.jpg) center/cover no-repeat' },
+    'al-h2b':    { tag:'EPH SECONDARY SCIENCE', title:'O Level (G3) Chemistry Fast Forward', sub:'O Level Chemistry · K W Ong / Joan Lim', desc:'Real EPH Secondary Science title. Key chemistry concepts and targeted questions for O Level preparation.', bg:'url(https://www.eph.com.sg/wp-content/uploads/9789815043525_1-360x494.jpg) center/cover no-repeat' },
+    'al-econ':   { tag:'EPH SECONDARY SCIENCE', title:'O Level (G3) Physics Fast Forward', sub:'O Level Physics · Thang M L / Glenda Chia', desc:'Real EPH Secondary Science title. Exam-focused physics revision with concept checks and practice drills.', bg:'url(https://www.eph.com.sg/wp-content/uploads/9789815043518_1-360x494.jpg) center/cover no-repeat' },
   };
 
   let currentModal = '';
   function openModal(id) {
     const d = books[id]; if (!d) return;
     currentModal = d.title;
-    document.getElementById('mTag').textContent = d.tag;
-    document.getElementById('mTitle').textContent = d.title;
-    document.getElementById('mSub').textContent = d.sub;
-    document.getElementById('mDesc').textContent = d.desc;
-    const cov = document.getElementById('mCov');
-    const book = document.getElementById('mBook');
-    cov.style.background = d.bg;
-    book.style.cssText = `background:${d.bg};color:#fff;font-size:8px;font-weight:900;text-align:center;line-height:1.4;border-radius:4px;box-shadow:-6px 6px 30px rgba(0,0,0,.7);width:92px;height:132px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px;`;
-    book.innerHTML = `<div style="opacity:.6;letter-spacing:2px;margin-bottom:8px;font-size:7px">${d.tag}</div><div style="font-size:13px">${d.title}</div>`;
-    document.getElementById('overlay').classList.add('open');
-    document.body.style.overflow = 'hidden';
+    sessionStorage.setItem('selectedBook', JSON.stringify({ id, ...d }));
+    window.location.href = `book-preview.html?id=${encodeURIComponent(id)}`;
   }
   function closeModal(e) {
     if (e && e.target !== document.getElementById('overlay')) return;
